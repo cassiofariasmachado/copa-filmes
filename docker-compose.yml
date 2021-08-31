@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  copa-filmes-api:
+    build:
+      context: api/
+    image: copa-filmes/api
+    container_name: copa-filmes-api
+    ports:
+      - 5000:80
+    environment:
+      - ASPNETCORE_ENVIRONMENT=${ASPNETCORE_ENVIRONMENT:-Production}
+    networks:
+      - copa-filmes-network
+
+  copa-filmes-app:
+    build:
+      context: app/
+    image: copa-filmes/app
+    container_name: copa-filmes-app
+    ports:
+      - 3000:80
+    environment:
+      - REACT_APP_API_URL=http://localhost:5000
+    networks:
+      - copa-filmes-network
+
+networks:
+  copa-filmes-network:

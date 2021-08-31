@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopaFilmes.Infra", "src\Cop
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{43E9AFA6-8B1D-46EE-ACC5-3E1966A09796}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopaFilmes.DomainTest", "test\CopaFilmes.DomainTest\CopaFilmes.DomainTest.csproj", "{701927F6-73D3-4A3D-BFBB-D22E0E7653FB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopaFilmes.Domain.Test", "test\CopaFilmes.Domain.Test\CopaFilmes.Domain.Test.csproj", "{701927F6-73D3-4A3D-BFBB-D22E0E7653FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
