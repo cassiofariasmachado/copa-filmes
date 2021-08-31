@@ -34,6 +34,8 @@ namespace CopaFilmes.Api
                     config.RegisterValidatorsFromAssembly(DomainAssembly)
                 );
 
+            services.AddHealthChecks();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
@@ -84,6 +86,7 @@ namespace CopaFilmes.Api
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHealthChecks("/health");
             });
         }
     }
