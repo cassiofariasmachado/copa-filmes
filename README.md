@@ -4,6 +4,8 @@ Sistema para gerenciamento da Copa dos Filmes, o maior campeonato de filmes do m
 
 ## API
 
+[![API](https://github.com/cassiofariasmachado/copa-filmes/actions/workflows/api.yml/badge.svg)](https://github.com/cassiofariasmachado/copa-filmes/actions/workflows/api.yml) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=copa-filmes-api&metric=alert_status)](https://sonarcloud.io/dashboard?id=copa-filmes-api)
+
 ### Estrutura da Solution
 
 - **CopaFilmes.Api**: interface Rest da API, onde estão controllers, models e etc;
@@ -40,7 +42,9 @@ Para executar o projeto execute os seguintes passos:
         - Executar API no modo debug através do atalho F5
 
 
-## APP
+## APP 
+
+[![APP](https://github.com/cassiofariasmachado/copa-filmes/actions/workflows/app.yml/badge.svg)](https://github.com/cassiofariasmachado/copa-filmes/actions/workflows/app.yml) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=copa-filmes-app&metric=alert_status)](https://sonarcloud.io/dashboard?id=copa-filmes-app)
 
 ### Arquitetura
 
@@ -82,7 +86,9 @@ Para executar o projeto execute os seguintes passos:
     yarn start # executa o APP com hot reload, na porta 3000
     ```
 
-## Docker/Compose
+## Docker/Compose 
+
+[![Docker](https://github.com/cassiofariasmachado/copa-filmes/actions/workflows/docker.yml/badge.svg)](https://github.com/cassiofariasmachado/copa-filmes/actions/workflows/docker.yml)
 
 ### Setup
 
