@@ -1,5 +1,5 @@
 {
-  "name": "copa-filmes",
+  "name": "copa-filmes-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -12,21 +12,23 @@
     "web-vitals": "^1.0.1"
   },
   "devDependencies": {
-    "@types/react": "^17.0.19",
-    "@types/react-router-dom": "^5.1.8",
-    "sass": "^1.38.2",
-    "@types/jest": "^26.0.15",
-    "@types/node": "^12.0.0",
-    "@types/react-dom": "^17.0.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10"
+    "@testing-library/user-event": "^12.1.10",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react": "^17.0.19",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-router-dom": "^5.1.8",
+    "sass": "^1.38.2",
+    "sonarqube-scanner": "^2.8.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "sonar-scan": "sonar-scanner -Dsonar.projectKey=$PROJECT_KEY -Dsonar.organization=$SONAR_ORGANIZATION -Dsonar.host.url=$SONAR_URL -Dsonar.login=$SONAR_TOKEN"
   },
   "eslintConfig": {
     "extends": [
