@@ -1,0 +1,33 @@
+.cardContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  padding: 1.5rem;
+  background-color: var(--white);
+  border: none;
+  border-radius: 3px;
+  min-height: 6.5rem;
+
+  transition: color 0.2s;
+
+  &:hover {
+    filter: brightness(0.9);
+  }
+}
+
+.cardCheckbox {
+  flex: 0.2;
+}
+
+.cardContent {
+  display: flex;
+  flex: 0.8;
+  flex-direction: column;
+  color: var(--black);
+
+  strong,
+  span {
+    flex: 1;
+  }
+}

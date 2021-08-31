@@ -1,0 +1,13 @@
+.screenContainer {
+  margin: 2rem 5rem;
+}
+
+.resultadosContainer {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+
+  > div {
+    margin-top: 0.5rem;
+  }
+}

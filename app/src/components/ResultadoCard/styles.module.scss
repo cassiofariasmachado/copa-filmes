@@ -1,0 +1,29 @@
+.cardContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  background-color: var(--white);
+  border: 1px solid var(--white);
+  border-radius: 3px;
+  min-height: 6.5rem;
+
+  h3 {
+    color: var(--black);
+  }
+}
+
+.posicaoContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  background: var(--principal);
+  min-height: 6.5rem;
+  width: 5rem;
+  color: var(--white);
+  font-size: 2em;
+  border-radius: 3px;
+  margin-right: 2rem;
+}

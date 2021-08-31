@@ -1,0 +1,22 @@
+.screenContainer {
+  margin: 2rem 5rem;
+}
+
+.buttonsContainer {
+  margin: 2rem 0 1.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.cardContainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.card {
+  flex: 0 1 24%;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+}

@@ -1,0 +1,28 @@
+.headerContainer {
+  height: 12.5rem;
+  padding: 1.5rem;
+  background-color: var(--white);
+  text-align: center;
+  color: var(--black);
+  border: none;
+  border-radius: 3px;
+
+  hr {
+    width: 2%;
+    height: 2px;
+    margin: 0 auto;
+    background-color: var(--black);
+    border: none;
+    margin-bottom: 2rem;
+  }
+
+  h1 {
+    margin-bottom: 1rem;
+  }
+
+  .tituloPrincipal {
+    color: var(--principal);
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+}
