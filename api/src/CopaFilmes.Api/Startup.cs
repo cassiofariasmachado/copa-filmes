@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Reflection;
+using CopaFilmes.Api.Filters;
 using CopaFilmes.Domain.Interfaces.ApiServices;
 using CopaFilmes.Domain.Interfaces.Services;
 using CopaFilmes.Domain.Services;
@@ -9,6 +10,7 @@ using FluentValidation.AspNetCore;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -29,10 +31,20 @@ namespace CopaFilmes.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers()
+            services.AddControllers(config =>
+                {
+                    config.Filters.Add<FluentValidationFilter>();
+                })
                 .AddFluentValidation(config =>
-                    config.RegisterValidatorsFromAssembly(DomainAssembly)
-                );
+                {
+                    config.RegisterValidatorsFromAssembly(DomainAssembly);
+                    config.DisableDataAnnotationsValidation = true;
+                });
+
+            services.Configure<ApiBehaviorOptions>(options =>
+            {
+                options.SuppressModelStateInvalidFilter = true;
+            });
 
             services.AddHealthChecks();
 

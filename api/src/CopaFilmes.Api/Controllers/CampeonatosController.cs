@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 using CopaFilmes.Api.Model.Campeonatos.Responses;
-using CopaFilmes.Api.Model.Compartilhado;
+using CopaFilmes.Api.Model.Compartilhado.Responses;
 using CopaFilmes.Domain.Features.Campeonatos.GerarCampeonato;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -28,12 +28,12 @@ namespace CopaFilmes.Api.Controllers
         [ProducesResponseType(typeof(CampeonatoResponse), (int)HttpStatusCode.OK)]
         public async Task<IActionResult> GerarCampeonato([FromBody] GerarCampeonatoCommand request, CancellationToken cancellationToken)
         {
-            var campeonato = await _mediator.Send(request, cancellationToken);
+            var resposta = await _mediator.Send(request, cancellationToken);
 
-            if (campeonato == default)
-                return BadRequest(new ErroResponse("Ocorreu um erro ao gerar o campeonato"));
-
-            return Ok(new CampeonatoResponse(campeonato));
+            return resposta.Match<IActionResult>(
+                campeonato => Ok(new CampeonatoResponse(campeonato)),
+                erro => BadRequest(new ErroResponse(erro))
+            );
         }
     }
 }

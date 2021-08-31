@@ -2,13 +2,18 @@
 using System.Linq;
 using CopaFilmes.Domain.Entities;
 using CopaFilmes.Domain.Interfaces.Services;
+using LanguageExt;
+using LanguageExt.Common;
 
 namespace CopaFilmes.Domain.Services
 {
     public class CopaService : ICopaService
     {
-        public Campeonato GerarCampeonato(IEnumerable<Filme> filmes)
+        public Either<Error, Campeonato> GerarCampeonato(IEnumerable<Filme> filmes)
         {
+            if (filmes.Count() != 8)
+                return Error.New("É necessário 8 filmes para gerar o campeonato");
+
             var filmesOrdenados = filmes.OrderBy(c => c.Titulo).ToList();
 
             var campeonato = new Campeonato();

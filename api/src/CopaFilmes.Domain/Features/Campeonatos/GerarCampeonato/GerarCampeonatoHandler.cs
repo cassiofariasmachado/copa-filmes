@@ -4,11 +4,13 @@ using System.Threading.Tasks;
 using CopaFilmes.Domain.Entities;
 using CopaFilmes.Domain.Interfaces.ApiServices;
 using CopaFilmes.Domain.Interfaces.Services;
+using LanguageExt;
+using LanguageExt.Common;
 using MediatR;
 
 namespace CopaFilmes.Domain.Features.Campeonatos.GerarCampeonato
 {
-    public class GerarCampeonatoHandler : IRequestHandler<GerarCampeonatoCommand, Campeonato>
+    public class GerarCampeonatoHandler : IRequestHandler<GerarCampeonatoCommand, Either<Error, Campeonato>>
     {
         private readonly IFilmeApiService _filmeApiService;
         private readonly ICopaService _copaService;
@@ -19,7 +21,7 @@ namespace CopaFilmes.Domain.Features.Campeonatos.GerarCampeonato
             _copaService = copaService;
         }
 
-        public async Task<Campeonato> Handle(GerarCampeonatoCommand request, CancellationToken cancellationToken)
+        public async Task<Either<Error, Campeonato>> Handle(GerarCampeonatoCommand request, CancellationToken cancellationToken)
         {
             var filmes = await _filmeApiService.ListarFilmesAsync(cancellationToken);
 
